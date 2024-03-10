@@ -1,0 +1,179 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+@font-face {
+    font-family: 'gracia';
+    src: url(/Users/lyndajung/Desktop/FONTS/gracia.woff);
+}
+
+* {
+    --lightbrown: #D9984A;
+    --brown: #BF8D7A;
+    --beige: #D9B4A7;
+    --darkbrown: #734136;
+    --redbrown: #A63333;
+    --charcoal: #1a1818;
+    --offwhite: #ece7e1;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --secondary-color: #ece7e1;
+    --contrast-color: var(--charcoal);
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: -10;
+    background-color: var(--charcoal);
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--darkbrown);
+    animation: expand .8s ease forwards;
+    background-color: var(--secondary-color);
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+    transition: all .8s ease;
+  }
+  
+  .container_content {
+   width: 50%;
+  }
+  
+  .container_content_inner {
+    width: 80%;
+    margin-left: 80px;
+  }
+  
+  .container_outer_img {
+    margin: 50px;
+    width: 50%;
+    overflow: hidden;
+  }   
+      
+  .container_img {
+    width: 100%;
+    animation: slideIn 1.5s ease-in-out forwards;
+  }
+  
+  .par {
+    height: auto;
+    overflow: hidden;
+  }
+  
+  p {
+    line-height: 28px;
+    transform: translateY(300px);
+    animation: slideUp .8s ease-in-out forwards .8s;
+  }
+  
+  span{
+    position: relative;
+    display: inline-flex;
+    width: 180px;
+    height: 55px;
+    margin: 0 15px;
+    perspective: 1000px;
+  }
+  
+  span a{
+    font-size: 19px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'Montserrat', sans-serif;
+    
+  }
+  span a:before,
+  span a:after{
+    position: absolute;
+    content: "Contact";
+    height: 55px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid black;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  span a:before{
+    color: #fff;
+    background: #000;
+    transform: rotateY(0deg) translateZ(25px);
+  }
+  span a:after{
+    color: #000;
+    transform: rotateX(90deg) translateZ(25px);
+  }
+  span a:hover{
+    transform: translateZ(-25px) rotateX(-90deg);
+  }
+  
+  .btns_more {
+    background: transparent;
+    padding: 8px 12px;
+    font-size: 16px;
+    text-transform: uppercase;
+    position: relative;
+    margin-top: 15px;
+    outline: none;
+    transform: translateY(50px);
+    animation: slideUp .8s ease-in-out  forwards 1s;
+  }
+  
+  .title {
+    overflow: hidden;
+    height: auto;
+    
+  }
+  
+  h1 {
+    font-family: 'gracia';
+    font-size: 100px;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+    transform: translateY(100px);
+    animation: slideUp .8s ease forwards .5s;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateX(500px) scale(.2);
+    }
+    100% {
+      transform: translateX(0px) scale(1);
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+      transform: translateY(300px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  @keyframes expand {
+    0% {
+      transform: translateX(1400px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+
